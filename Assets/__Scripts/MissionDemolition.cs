@@ -109,4 +109,9 @@ public class MissionDemolition : MonoBehaviour
                 break;
         }
     }
+    
+    public static void ShotFired()
+    {
+        S.shotsTaken++;
+    }
 }
