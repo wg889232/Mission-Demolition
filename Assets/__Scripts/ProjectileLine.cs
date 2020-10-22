@@ -11,11 +11,12 @@ public class ProjectileLine : MonoBehaviour
     private LineRenderer line;
     private GameObject _poi;
     private List<Vector3> points;
+    public GameObject projectileLine;
     
     void Awake()
     {
         S = this;
-        line = GetComponent<LineRenderer>();
+        line = projectileLine.GetComponent<LineRenderer>();
         line.enabled = false;
         points = new List<Vector3>();
     }

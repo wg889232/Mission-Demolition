@@ -12,6 +12,9 @@ public class Slingshot : MonoBehaviour
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
     public float velocityMult = 8f;
+    //private LineRenderer sling1;
+    private LineRenderer sling;
+    public GameObject slingshot;
 
     static public Vector3 LAUNCH_POS
     {
@@ -62,6 +65,13 @@ public class Slingshot : MonoBehaviour
         Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
 
         Vector3 mouseDelta = mousePos3D - launchPos;
+
+        //sling1 = GetComponent<LineRenderer>();
+        //sling1.SetPosition(0, new Vector3(-10.15f,-6,-1));
+        //sling1.SetPosition(1, mousePos3D);
+        sling = slingshot.GetComponent<LineRenderer>();
+        sling.SetPosition(0, new Vector3(-9.8f, -6, 1));
+        sling.SetPosition(1, mousePos3D);
 
         float maxMagnitude = this.GetComponent<SphereCollider>().radius;
         if(mouseDelta.magnitude > maxMagnitude)
