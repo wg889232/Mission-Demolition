@@ -23,6 +23,8 @@ public class MissionDemolition : MonoBehaviour
     public int level;
     public int levelMax;
     public int shotsTaken;
+    static public int shotsPerRound;
+    static public int currentLevel;
     public GameObject castle;
     public GameMode mode = GameMode.idle;
     public string showing = "Show Slingshot";
@@ -39,6 +41,7 @@ public class MissionDemolition : MonoBehaviour
 
     void StartLevel()
     {
+        currentLevel = level;
         if (castle != null) Destroy(castle);
 
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Projectile");
@@ -113,5 +116,6 @@ public class MissionDemolition : MonoBehaviour
     public static void ShotFired()
     {
         S.shotsTaken++;
+        shotsPerRound = S.shotsTaken;
     }
 }

@@ -15,6 +15,7 @@ public class Goal : MonoBehaviour
             Color c = mat.color;
             c.a = 1;
             mat.color = c;
+            BestShot.NewBest();
         }
     }
 }
